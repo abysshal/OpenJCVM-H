@@ -1,0 +1,66 @@
+// converted by version 1.3
+// on Sun Jul 06 19:20:44 CST 2008
+
+.package net/sourceforge/openjcvm/test/ShortLibrary {
+	.aid 0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0xA;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef short ShortLibrary/sValue;
+		// 1
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+	}
+
+	.class public ShortLibrary 0 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private short sValue 0;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getValue()S;
+			setValue(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 1;		// java/lang/Object.<init>()V
+					aload_0;
+					sload_1;
+					putfield_s 0;		// short net/sourceforge/openjcvm/test/ShortLibrary/ShortLibrary.sValue
+					return;
+		}
+
+		.method public getValue()S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_s_this 0;		// short net/sourceforge/openjcvm/test/ShortLibrary/ShortLibrary.sValue
+					sreturn;
+		}
+
+		.method public setValue(S)V 2 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					putfield_s 0;		// short net/sourceforge/openjcvm/test/ShortLibrary/ShortLibrary.sValue
+					return;
+		}
+
+	}
+
+}

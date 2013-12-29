@@ -1,0 +1,4 @@
+java\lang\javacard\lang.jca
+javacard\framework\javacard\framework.jca
+javacard\security\javacard\security.jca
+javacardx\crypto\javacard\crypto.jca

@@ -1,0 +1,674 @@
+// converted by version 1.3
+// on Mon Mar 17 22:42:46 CST 2008
+
+.package javacard/security {
+	.aid 0xA0:0x0:0x0:0x0:0x62:0x1:0x2;
+	.version 1.2;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 1
+		staticMethodRef 1.5.0(S)V;		// javacard/framework/CardRuntimeException.<init>(S)V
+	}
+
+	.interface public abstract Key 0 {
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+	}
+
+	.interface public abstract DSAKey 1 {
+
+		.method public abstract getG([BS)S 0 {
+		}
+
+		.method public abstract getP([BS)S 1 {
+		}
+
+		.method public abstract getQ([BS)S 2 {
+		}
+
+		.method public abstract setG([BSS)V 3 {
+		}
+
+		.method public abstract setP([BSS)V 4 {
+		}
+
+		.method public abstract setQ([BSS)V 5 {
+		}
+
+	}
+
+	.interface public abstract PrivateKey 2 {
+
+		.superInterfaces {
+			Key;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+	}
+
+	.interface public abstract PublicKey 3 {
+
+		.superInterfaces {
+			Key;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+	}
+
+	.interface public abstract SecretKey 4 {
+
+		.superInterfaces {
+			Key;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+	}
+
+	.interface public abstract DSAPrivateKey 5 {
+
+		.superInterfaces {
+			Key;
+			PrivateKey;
+			DSAKey;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+		.method public abstract getG([BS)S 4 {
+		}
+
+		.method public abstract getP([BS)S 5 {
+		}
+
+		.method public abstract getQ([BS)S 6 {
+		}
+
+		.method public abstract setG([BSS)V 7 {
+		}
+
+		.method public abstract setP([BSS)V 8 {
+		}
+
+		.method public abstract setQ([BSS)V 9 {
+		}
+
+		.method public abstract getX([BS)S 10 {
+		}
+
+		.method public abstract setX([BSS)V 11 {
+		}
+
+	}
+
+	.interface public abstract DSAPublicKey 6 {
+
+		.superInterfaces {
+			Key;
+			PublicKey;
+			DSAKey;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+		.method public abstract getG([BS)S 4 {
+		}
+
+		.method public abstract getP([BS)S 5 {
+		}
+
+		.method public abstract getQ([BS)S 6 {
+		}
+
+		.method public abstract setG([BSS)V 7 {
+		}
+
+		.method public abstract setP([BSS)V 8 {
+		}
+
+		.method public abstract setQ([BSS)V 9 {
+		}
+
+		.method public abstract getY([BS)S 10 {
+		}
+
+		.method public abstract setY([BSS)V 11 {
+		}
+
+	}
+
+	.interface public abstract RSAPrivateCrtKey 7 {
+
+		.superInterfaces {
+			Key;
+			PrivateKey;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+		.method public abstract getDP1([BS)S 4 {
+		}
+
+		.method public abstract getDQ1([BS)S 5 {
+		}
+
+		.method public abstract getP([BS)S 6 {
+		}
+
+		.method public abstract getPQ([BS)S 7 {
+		}
+
+		.method public abstract getQ([BS)S 8 {
+		}
+
+		.method public abstract setDP1([BSS)V 9 {
+		}
+
+		.method public abstract setDQ1([BSS)V 10 {
+		}
+
+		.method public abstract setP([BSS)V 11 {
+		}
+
+		.method public abstract setPQ([BSS)V 12 {
+		}
+
+		.method public abstract setQ([BSS)V 13 {
+		}
+
+	}
+
+	.interface public abstract RSAPrivateKey 8 {
+
+		.superInterfaces {
+			Key;
+			PrivateKey;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+		.method public abstract getExponent([BS)S 4 {
+		}
+
+		.method public abstract getModulus([BS)S 5 {
+		}
+
+		.method public abstract setExponent([BSS)V 6 {
+		}
+
+		.method public abstract setModulus([BSS)V 7 {
+		}
+
+	}
+
+	.interface public abstract RSAPublicKey 9 {
+
+		.superInterfaces {
+			Key;
+			PublicKey;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+		.method public abstract getExponent([BS)S 4 {
+		}
+
+		.method public abstract getModulus([BS)S 5 {
+		}
+
+		.method public abstract setExponent([BSS)V 6 {
+		}
+
+		.method public abstract setModulus([BSS)V 7 {
+		}
+
+	}
+
+	.interface public abstract DESKey 10 {
+
+		.superInterfaces {
+			Key;
+			SecretKey;
+		}
+
+		.method public abstract clearKey()V 0 {
+		}
+
+		.method public abstract getSize()S 1 {
+		}
+
+		.method public abstract getType()B 2 {
+		}
+
+		.method public abstract isInitialized()Z 3 {
+		}
+
+		.method public abstract getKey([BS)B 4 {
+		}
+
+		.method public abstract setKey([BS)V 5 {
+		}
+
+	}
+
+	.class public final KeyPair 16 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final byte ALG_RSA = 1;		// B
+			public static final byte ALG_RSA_CRT = 2;		// B
+			public static final byte ALG_DSA = 3;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			genKeyPair()V;
+			getPrivate()Ljavacard/security/PrivateKey;;
+			getPublic()Ljavacard/security/PublicKey;;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public final genKeyPair()V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public <init>(BS)V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public <init>(Ljavacard/security/PublicKey;Ljavacard/security/PrivateKey;)V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public getPublic()Ljavacard/security/PublicKey; 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public getPrivate()Ljavacard/security/PrivateKey; 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+	}
+
+	.class public abstract MessageDigest 11 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final byte ALG_SHA = 1;		// B
+			public static final byte ALG_MD5 = 2;		// B
+			public static final byte ALG_RIPEMD160 = 3;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			doFinal([BSS[BS)S;
+			getAlgorithm()B;
+			getLength()B;
+			reset()V;
+			update([BSS)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static final getInstance(BZ)Ljavacard/security/MessageDigest; 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method protected <init>()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public abstract getAlgorithm()B 2 {
+		}
+
+		.method public abstract getLength()B 3 {
+		}
+
+		.method public abstract reset()V 4 {
+		}
+
+		.method public abstract doFinal([BSS[BS)S 1 {
+		}
+
+		.method public abstract update([BSS)V 5 {
+		}
+
+	}
+
+	.class public CryptoException 12 extends 1.5 {		// extends javacard/framework/CardRuntimeException
+
+		.fields {
+			public static final short ILLEGAL_VALUE = 1;		// S
+			public static final short UNINITIALIZED_KEY = 2;		// S
+			public static final short NO_SUCH_ALGORITHM = 3;		// S
+			public static final short INVALID_INIT = 4;		// S
+			public static final short ILLEGAL_USE = 5;		// S
+		}
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 1;		// javacard/framework/CardRuntimeException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public abstract RandomData 14 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final byte ALG_PSEUDO_RANDOM = 1;		// B
+			public static final byte ALG_SECURE_RANDOM = 2;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			generateData([BSS)V;
+			setSeed([BSS)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static final getInstance(B)Ljavacard/security/RandomData; 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method protected <init>()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public abstract generateData([BSS)V 1 {
+		}
+
+		.method public abstract setSeed([BSS)V 2 {
+		}
+
+	}
+
+	.class public KeyBuilder 13 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final short LENGTH_DES = 64;		// S
+			public static final short LENGTH_DES3_2KEY = 128;		// S
+			public static final short LENGTH_DES3_3KEY = 192;		// S
+			public static final short LENGTH_DSA_1024 = 1024;		// S
+			public static final short LENGTH_DSA_768 = 768;		// S
+			public static final short LENGTH_DSA_512 = 512;		// S
+			public static final short LENGTH_RSA_2048 = 2048;		// S
+			public static final short LENGTH_RSA_1024 = 1024;		// S
+			public static final short LENGTH_RSA_768 = 768;		// S
+			public static final short LENGTH_RSA_512 = 512;		// S
+			public static final byte TYPE_DES_TRANSIENT_RESET = 1;		// B
+			public static final byte TYPE_DES_TRANSIENT_DESELECT = 2;		// B
+			public static final byte TYPE_DES = 3;		// B
+			public static final byte TYPE_RSA_PUBLIC = 4;		// B
+			public static final byte TYPE_RSA_PRIVATE = 5;		// B
+			public static final byte TYPE_RSA_CRT_PRIVATE = 6;		// B
+			public static final byte TYPE_DSA_PUBLIC = 7;		// B
+			public static final byte TYPE_DSA_PRIVATE = 8;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method  <init>()V {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public static buildKey(BSZ)Ljavacard/security/Key; 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+	}
+
+	.class public abstract Signature 15 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final byte ALG_DES_MAC4_NOPAD = 1;		// B
+			public static final byte ALG_DES_MAC8_NOPAD = 2;		// B
+			public static final byte ALG_DES_MAC4_ISO9797_M1 = 3;		// B
+			public static final byte ALG_DES_MAC8_ISO9797_M1 = 4;		// B
+			public static final byte ALG_DES_MAC4_ISO9797_M2 = 5;		// B
+			public static final byte ALG_DES_MAC8_ISO9797_M2 = 6;		// B
+			public static final byte ALG_DES_MAC4_PKCS5 = 7;		// B
+			public static final byte ALG_DES_MAC8_PKCS5 = 8;		// B
+			public static final byte ALG_RSA_SHA_ISO9796 = 9;		// B
+			public static final byte ALG_RSA_SHA_PKCS1 = 10;		// B
+			public static final byte ALG_RSA_MD5_PKCS1 = 11;		// B
+			public static final byte ALG_RSA_RIPEMD160_ISO9796 = 12;		// B
+			public static final byte ALG_RSA_RIPEMD160_PKCS1 = 13;		// B
+			public static final byte ALG_DSA_SHA = 14;		// B
+			public static final byte ALG_RSA_SHA_RFC2409 = 15;		// B
+			public static final byte ALG_RSA_MD5_RFC2409 = 16;		// B
+			public static final byte MODE_SIGN = 1;		// B
+			public static final byte MODE_VERIFY = 2;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getAlgorithm()B;
+			getLength()S;
+			init(Ljavacard/security/Key;B)V;
+			init(Ljavacard/security/Key;B[BSS)V;
+			sign([BSS[BS)S;
+			update([BSS)V;
+			verify([BSS[BSS)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static final getInstance(BZ)Ljavacard/security/Signature; 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method protected <init>()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public abstract init(Ljavacard/security/Key;B)V 3 {
+		}
+
+		.method public abstract init(Ljavacard/security/Key;B[BSS)V 4 {
+		}
+
+		.method public abstract getAlgorithm()B 1 {
+		}
+
+		.method public abstract getLength()S 2 {
+		}
+
+		.method public abstract update([BSS)V 6 {
+		}
+
+		.method public abstract sign([BSS[BS)S 5 {
+		}
+
+		.method public abstract verify([BSS[BSS)Z 7 {
+		}
+
+	}
+
+}

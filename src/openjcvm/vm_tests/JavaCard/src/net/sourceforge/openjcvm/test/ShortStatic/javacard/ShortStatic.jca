@@ -1,0 +1,84 @@
+// converted by version 1.3
+// on Wed Jun 18 21:01:52 CST 2008
+
+.package net/sourceforge/openjcvm/test/ShortStatic {
+	.aid 0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0x8;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0x8:0x1 ShortStatic;
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 1
+		staticFieldRef short ShortStatic/s1;
+		// 2
+		staticFieldRef short ShortStatic/s2;
+		// 3
+		staticFieldRef short ShortStatic/s3;
+	}
+
+	.class public ShortStatic 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			public static short s1 0;		// S
+			public static short s2 1 = 1;		// S
+			public static short s3 2 = 257;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// javacard/framework/Applet.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_s 1;		// short net/sourceforge/openjcvm/test/ShortStatic/ShortStatic.s1
+					getstatic_s 2;		// short net/sourceforge/openjcvm/test/ShortStatic/ShortStatic.s2
+					sadd;
+					putstatic_s 1;		// short net/sourceforge/openjcvm/test/ShortStatic/ShortStatic.s1
+					getstatic_s 3;		// short net/sourceforge/openjcvm/test/ShortStatic/ShortStatic.s3
+					getstatic_s 1;		// short net/sourceforge/openjcvm/test/ShortStatic/ShortStatic.s1
+					sadd;
+					putstatic_s 3;		// short net/sourceforge/openjcvm/test/ShortStatic/ShortStatic.s3
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+	}
+
+}

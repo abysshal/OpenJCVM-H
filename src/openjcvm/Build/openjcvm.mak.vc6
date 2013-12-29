@@ -1,0 +1,183 @@
+# Microsoft Developer Studio Generated NMAKE File, Based on openjcvm.dsp
+!IF "$(CFG)" == ""
+CFG=openjcvm - Win32 Debug
+!MESSAGE No configuration specified. Defaulting to openjcvm - Win32 Debug.
+!ENDIF 
+
+!IF "$(CFG)" != "openjcvm - Win32 Release" && "$(CFG)" != "openjcvm - Win32 Debug"
+!MESSAGE Invalid configuration "$(CFG)" specified.
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "openjcvm.mak" CFG="openjcvm - Win32 Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "openjcvm - Win32 Release" (based on "Win32 (x86) Console Application")
+!MESSAGE "openjcvm - Win32 Debug" (based on "Win32 (x86) Console Application")
+!MESSAGE 
+!ERROR An invalid configuration is specified.
+!ENDIF 
+
+!IF "$(OS)" == "Windows_NT"
+NULL=
+!ELSE 
+NULL=nul
+!ENDIF 
+
+CPP=cl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "openjcvm - Win32 Release"
+
+OUTDIR=.\Release
+INTDIR=.\Release
+# Begin Custom Macros
+OutDir=.\Release
+# End Custom Macros
+
+ALL : "$(OUTDIR)\openjcvm.exe"
+
+
+CLEAN :
+	-@erase "$(INTDIR)\installer.obj"
+	-@erase "$(INTDIR)\openJCVM.obj"
+	-@erase "$(INTDIR)\readIJC.obj"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(INTDIR)\vm.obj"
+	-@erase "$(OUTDIR)\openjcvm.exe"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP_PROJ=/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"$(INTDIR)\openjcvm.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
+BSC32=bscmake.exe
+BSC32_FLAGS=/nologo /o"$(OUTDIR)\openjcvm.bsc" 
+BSC32_SBRS= \
+	
+LINK32=link.exe
+LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:no /pdb:"$(OUTDIR)\openjcvm.pdb" /machine:I386 /out:"$(OUTDIR)\openjcvm.exe" 
+LINK32_OBJS= \
+	"$(INTDIR)\installer.obj" \
+	"$(INTDIR)\vm.obj" \
+	"$(INTDIR)\openJCVM.obj" \
+	"$(INTDIR)\readIJC.obj"
+
+"$(OUTDIR)\openjcvm.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ELSEIF  "$(CFG)" == "openjcvm - Win32 Debug"
+
+OUTDIR=.\Debug
+INTDIR=.\Debug
+# Begin Custom Macros
+OutDir=.\Debug
+# End Custom Macros
+
+ALL : "$(OUTDIR)\openjcvm.exe"
+
+
+CLEAN :
+	-@erase "$(INTDIR)\installer.obj"
+	-@erase "$(INTDIR)\openJCVM.obj"
+	-@erase "$(INTDIR)\readIJC.obj"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(INTDIR)\vc60.pdb"
+	-@erase "$(INTDIR)\vm.obj"
+	-@erase "$(OUTDIR)\openjcvm.exe"
+	-@erase "$(OUTDIR)\openjcvm.ilk"
+	-@erase "$(OUTDIR)\openjcvm.pdb"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP_PROJ=/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"$(INTDIR)\openjcvm.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /GZ  /c 
+BSC32=bscmake.exe
+BSC32_FLAGS=/nologo /o"$(OUTDIR)\openjcvm.bsc" 
+BSC32_SBRS= \
+	
+LINK32=link.exe
+LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"$(OUTDIR)\openjcvm.pdb" /debug /machine:I386 /out:"$(OUTDIR)\openjcvm.exe" /pdbtype:sept 
+LINK32_OBJS= \
+	"$(INTDIR)\installer.obj" \
+	"$(INTDIR)\vm.obj" \
+	"$(INTDIR)\openJCVM.obj" \
+	"$(INTDIR)\readIJC.obj"
+
+"$(OUTDIR)\openjcvm.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ENDIF 
+
+.c{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.c{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cpp{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+.cxx{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+
+!IF "$(NO_EXTERNAL_DEPS)" != "1"
+!IF EXISTS("openjcvm.dep")
+!INCLUDE "openjcvm.dep"
+!ELSE 
+!MESSAGE Warning: cannot find "openjcvm.dep"
+!ENDIF 
+!ENDIF 
+
+
+!IF "$(CFG)" == "openjcvm - Win32 Release" || "$(CFG)" == "openjcvm - Win32 Debug"
+SOURCE=.\vm_core\installer.cpp
+
+"$(INTDIR)\installer.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=.\vm_core\vm.cpp
+
+"$(INTDIR)\vm.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=.\vm_shell\openJCVM.cpp
+
+"$(INTDIR)\openJCVM.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=.\vm_shell\readIJC.cpp
+
+"$(INTDIR)\readIJC.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+
+!ENDIF 
+

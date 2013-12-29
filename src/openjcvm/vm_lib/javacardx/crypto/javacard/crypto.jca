@@ -1,0 +1,97 @@
+// converted by version 1.3
+// on Mon Mar 17 22:42:47 CST 2008
+
+.package javacardx/crypto {
+	.aid 0xA0:0x0:0x0:0x0:0x62:0x2:0x1;
+	.version 1.2;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.2;		//javacard/security
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+	}
+
+	.interface public abstract KeyEncryption 0 {
+
+		.method public abstract getKeyCipher()Ljavacardx/crypto/Cipher; 0 {
+		}
+
+		.method public abstract setKeyCipher(Ljavacardx/crypto/Cipher;)V 1 {
+		}
+
+	}
+
+	.class public abstract Cipher 1 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final byte ALG_DES_CBC_NOPAD = 1;		// B
+			public static final byte ALG_DES_CBC_ISO9797_M1 = 2;		// B
+			public static final byte ALG_DES_CBC_ISO9797_M2 = 3;		// B
+			public static final byte ALG_DES_CBC_PKCS5 = 4;		// B
+			public static final byte ALG_DES_ECB_NOPAD = 5;		// B
+			public static final byte ALG_DES_ECB_ISO9797_M1 = 6;		// B
+			public static final byte ALG_DES_ECB_ISO9797_M2 = 7;		// B
+			public static final byte ALG_DES_ECB_PKCS5 = 8;		// B
+			public static final byte ALG_RSA_ISO14888 = 9;		// B
+			public static final byte ALG_RSA_PKCS1 = 10;		// B
+			public static final byte ALG_RSA_ISO9796 = 11;		// B
+			public static final byte ALG_RSA_NOPAD = 12;		// B
+			public static final byte MODE_DECRYPT = 1;		// B
+			public static final byte MODE_ENCRYPT = 2;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			doFinal([BSS[BS)S;
+			getAlgorithm()B;
+			init(Ljavacard/security/Key;B)V;
+			init(Ljavacard/security/Key;B[BSS)V;
+			update([BSS[BS)S;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static final getInstance(BZ)Ljavacardx/crypto/Cipher; 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method protected <init>()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public abstract init(Ljavacard/security/Key;B)V 3 {
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		}
+
+		.method public abstract init(Ljavacard/security/Key;B[BSS)V 4 {
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		}
+
+		.method public abstract getAlgorithm()B 2 {
+		}
+
+		.method public abstract doFinal([BSS[BS)S 1 {
+		}
+
+		.method public abstract update([BSS[BS)S 5 {
+		}
+
+	}
+
+}

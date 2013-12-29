@@ -1,0 +1,85 @@
+// converted by version 1.3
+// on Sat Oct 04 15:00:47 CST 2008
+
+.package net/sourceforge/openjcvm/test/TestJCFramework {
+	.aid 0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0xD;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0xD:0x1 TestJCF;
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef TestJCF/<init>()V;
+		// 1
+		classRef TestJCF;
+		// 2
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 3
+		virtualMethodRef 0.3.1()V;		// javacard/framework/Applet.register()V
+	}
+
+	.class public TestJCF 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			select()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 1;		// net/sourceforge/openjcvm/test/TestJCFramework/TestJCF
+					dup;
+					invokespecial 0;		// net/sourceforge/openjcvm/test/TestJCFramework/TestJCF.<init>()V
+					pop;
+					return;
+		}
+
+		.method private <init>()V {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 2;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 3;		// javacard/framework/Applet.register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.12;
+
+				L0:	sconst_2;
+					sstore_2;
+					sconst_3;
+					sstore_3;
+					sload_2;
+					sload_3;
+					sadd;
+					sstore 4;
+					sinc 4 1;
+					return;
+		}
+
+	}
+
+}

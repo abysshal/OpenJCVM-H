@@ -1,0 +1,67 @@
+// converted by version 1.3
+// on Sat Oct 04 14:19:12 CST 2008
+
+.package net/sourceforge/openjcvm/engine {
+	.aid 0xA0:0xFF:0x0:0x0:0x0:0x0:0x0:0x2;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0xA0:0xFF:0x0:0x0:0x0:0x0:0x0:0x2:0x1 AppletEngine;
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 1
+		staticMethodRef 0.10.2()V;		// javacard/framework/OpenjcvmRegistry.processAPDUOneApplet()V
+	}
+
+	.class public AppletEngine 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			select()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// javacard/framework/Applet.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	invokestatic 1;		// javacard/framework/OpenjcvmRegistry.processAPDUOneApplet()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.12;
+
+				L0:	return;
+		}
+
+	}
+
+}

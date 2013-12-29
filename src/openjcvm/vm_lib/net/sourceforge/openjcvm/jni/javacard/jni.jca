@@ -1,0 +1,89 @@
+// converted by version 1.3
+// on Thu Oct 02 21:03:48 CST 2008
+
+.package net/sourceforge/openjcvm/jni {
+	.aid 0xA0:0xFF:0x0:0x0:0x0:0x0:0x0:0x1;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+	}
+
+	.class public JCFDriver 0 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public static registerApplet(Ljava/lang/Object;)V 1 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljava/lang/Object;	0.0;
+
+				L0:	return;
+		}
+
+		.method public static registerApplet(Ljava/lang/Object;[BSB)V 2 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljava/lang/Object;	0.0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public JavaNativeInterface 1 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public static callNativeFunction(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static callNativeFunction(SS)V 2 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+}

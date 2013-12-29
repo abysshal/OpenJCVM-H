@@ -1,0 +1,82 @@
+// converted by version 1.3
+// on Wed Jun 11 21:15:43 CST 2008
+
+.package net/sourceforge/openjcvm/test/ShortDiv {
+	.aid 0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0x4;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0x4:0x1 ShortDiv;
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+	}
+
+	.class public ShortDiv 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// javacard/framework/Applet.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 4;
+			.locals 9;
+
+				L0:	sspush 200;
+					sstore_3;
+					bspush 10;
+					sstore 4;
+					sload_3;
+					sload 4;
+					sdiv;
+					sstore 5;
+					sinc 5 1;
+					iipush 100001;
+					istore 6;
+					iipush 2000020;
+					istore 8;
+					iload 8;
+					iload 6;
+					idiv;
+					istore 10;
+					iinc 10 1;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+	}
+
+}

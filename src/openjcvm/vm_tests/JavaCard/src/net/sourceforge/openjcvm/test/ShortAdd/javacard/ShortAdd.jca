@@ -1,0 +1,107 @@
+// converted by version 1.3
+// on Wed Jun 11 21:10:49 CST 2008
+
+.package net/sourceforge/openjcvm/test/ShortAdd {
+	.aid 0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0x1;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x0:0x0:0x0:0x1:0x1 ShortAdd;
+	}
+
+	.constantPool {
+		// 0
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+	}
+
+	.class public ShortAdd 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 0;		// javacard/framework/Applet.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 4;
+			.locals 17;
+
+				L0:	sconst_1;
+					sstore_3;
+					sconst_2;
+					sstore 4;
+					sload_3;
+					sload 4;
+					sadd;
+					sstore 5;
+					sinc 5 1;
+					sipush 10000;
+					istore 6;
+					sipush 20000;
+					istore 8;
+					iload 6;
+					iload 8;
+					iadd;
+					istore 10;
+					iinc 10 1;
+					sconst_3;
+					sstore 12;
+					bspush -2;
+					sstore 13;
+					sload 12;
+					sload 13;
+					sadd;
+					s2b;
+					sstore 14;
+					sload 14;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 14;
+					iload 10;
+					i2b;
+					sstore 15;
+					sload 15;
+					sstore 16;
+					sload 16;
+					s2i;
+					istore 17;
+					iload 17;
+					i2s;
+					sstore 19;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+	}
+
+}

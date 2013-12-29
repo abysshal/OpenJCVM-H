@@ -1,0 +1,1097 @@
+// converted by version 1.3
+// on Sat Oct 04 14:49:29 CST 2008
+
+.package javacard/framework {
+	.aid 0xA0:0x0:0x0:0x0:0x62:0x1:0x1;
+	.version 1.2;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef AppletNode AppletNode/next;
+		// 1
+		instanceFieldRef byte[] APDU/apduBuffer;
+		// 2
+		staticMethodRef OpenjcvmRegistry/registerOneApplet(Ljavacard/framework/Applet;)V;
+		// 3
+		staticMethodRef 0.2.0()V;		// java/lang/Exception.<init>()V
+		// 4
+		staticMethodRef 0.3.0()V;		// java/lang/RuntimeException.<init>()V
+		// 5
+		staticMethodRef CardRuntimeException/<init>(S)V;
+		// 6
+		staticFieldRef Applet OpenjcvmRegistry/oneApplet;
+		// 7
+		virtualMethodRef Applet/process(Ljavacard/framework/APDU;)V;
+		// 8
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 9
+		staticMethodRef CardException/<init>(S)V;
+	}
+
+	.interface public abstract ISO7816 0 {
+
+		.fields {
+			public static final byte CLA_ISO7816 = 0;		// B
+			public static final byte INS_EXTERNAL_AUTHENTICATE = -126;		// B
+			public static final byte INS_SELECT = -92;		// B
+			public static final byte OFFSET_CDATA = 5;		// B
+			public static final byte OFFSET_CLA = 0;		// B
+			public static final byte OFFSET_INS = 1;		// B
+			public static final byte OFFSET_LC = 4;		// B
+			public static final byte OFFSET_P1 = 2;		// B
+			public static final byte OFFSET_P2 = 3;		// B
+			public static final short SW_APPLET_SELECT_FAILED = 27033;		// S
+			public static final short SW_BYTES_REMAINING_00 = 24832;		// S
+			public static final short SW_CLA_NOT_SUPPORTED = 28160;		// S
+			public static final short SW_COMMAND_NOT_ALLOWED = 27014;		// S
+			public static final short SW_CONDITIONS_NOT_SATISFIED = 27013;		// S
+			public static final short SW_CORRECT_LENGTH_00 = 27648;		// S
+			public static final short SW_DATA_INVALID = 27012;		// S
+			public static final short SW_FILE_FULL = 27268;		// S
+			public static final short SW_FILE_INVALID = 27011;		// S
+			public static final short SW_FILE_NOT_FOUND = 27266;		// S
+			public static final short SW_FUNC_NOT_SUPPORTED = 27265;		// S
+			public static final short SW_INCORRECT_P1P2 = 27270;		// S
+			public static final short SW_INS_NOT_SUPPORTED = 27904;		// S
+			public static final short SW_NO_ERROR = -28672;		// S
+			public static final short SW_RECORD_NOT_FOUND = 27267;		// S
+			public static final short SW_SECURITY_STATUS_NOT_SATISFIED = 27010;		// S
+			public static final short SW_UNKNOWN = 28416;		// S
+			public static final short SW_WRONG_DATA = 27264;		// S
+			public static final short SW_WRONG_LENGTH = 26368;		// S
+			public static final short SW_WRONG_P1P2 = 27392;		// S
+		}
+
+	}
+
+	.interface public abstract PIN 1 {
+
+		.method public abstract check([BSB)Z 0 {
+		}
+
+		.method public abstract getTriesRemaining()B 1 {
+		}
+
+		.method public abstract isValidated()Z 2 {
+		}
+
+		.method public abstract reset()V 3 {
+		}
+
+	}
+
+	.interface public abstract Shareable 2 {
+
+		.shareable;
+
+	}
+
+	.class public abstract Applet 3 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			select()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method protected final register()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokestatic 2;		// javacard/framework/OpenjcvmRegistry.registerOneApplet(Ljavacard/framework/Applet;)V
+					return;
+		}
+
+		.method protected final register([BSB)V 2 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method protected final selectingApplet()Z 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method protected <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public select()Z 4 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public deselect()V 5 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable; 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public abstract process(Ljavacard/framework/APDU;)V 7 {
+		}
+
+	}
+
+	.class public AppletNode 4 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public Applet applet 0;		// Ljavacard/framework/Applet;
+			public AppletNode next 1;		// Ljavacard/framework/AppletNode;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(Ljavacard/framework/Applet;)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					aload_0;
+					aconst_null;
+					putfield_a 0;		// reference javacard/framework/AppletNode.next
+					return;
+		}
+
+	}
+
+	.class public CardException 5 extends 0.2 {		// extends java/lang/Exception
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 3;		// java/lang/Exception.<init>()V
+					return;
+		}
+
+		.method public getReason()S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public setReason(S)V 2 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public CardRuntimeException 6 extends 0.3 {		// extends java/lang/RuntimeException
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 4;		// java/lang/RuntimeException.<init>()V
+					return;
+		}
+
+		.method public getReason()S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public setReason(S)V 2 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public final AID 7 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 0 {
+			equals(Ljava/lang/Object;)Z;
+			getBytes([BS)B;
+			equals([BSB)Z;
+			partialEquals([BSB)Z;
+			RIDEquals(Ljavacard/framework/AID;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>([BSB)V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public getBytes([BS)B 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public equals(Ljava/lang/Object;)Z 0 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljava/lang/Object;	0.0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public equals([BSB)Z 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public partialEquals([BSB)Z 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public RIDEquals(Ljavacard/framework/AID;)Z 4 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+	}
+
+	.class public ISOException 8 extends CardRuntimeException {
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 5;		// javacard/framework/CardRuntimeException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public final JCSystem 9 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public static final byte CLEAR_ON_DESELECT = 2;		// B
+			public static final byte CLEAR_ON_RESET = 1;		// B
+			public static final byte NOT_A_TRANSIENT_OBJECT = 0;		// B
+			static final short JAVA_CARD_VERSION = 513;		// S
+			static final short CARD_COMMIT_CAPACITY = 256;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method  <init>()V {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public static isTransient(Ljava/lang/Object;)B 0 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljava/lang/Object;	0.0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static makeTransientBooleanArray(SB)[Z 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static makeTransientByteArray(SB)[B 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static makeTransientShortArray(SB)[S 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static makeTransientObjectArray(SB)[Ljava/lang/Object; 4 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljava/lang/Object;	0.0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static getVersion()S 5 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static getAID()Ljavacard/framework/AID; 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static lookupAID([BSB)Ljavacard/framework/AID; 7 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static beginTransaction()V 8 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static abortTransaction()V 9 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static commitTransaction()V 10 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static getTransactionDepth()B 11 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static getUnusedCommitCapacity()S 12 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static getMaxCommitCapacity()S 13 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static getPreviousContextAID()Ljavacard/framework/AID; 14 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+		.method public static getAppletShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable; 15 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					areturn;
+		}
+
+	}
+
+	.class public OpenjcvmRegistry 10 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private static Applet oneApplet;		// Ljavacard/framework/Applet;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public static registerOneApplet(Ljavacard/framework/Applet;)V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					putstatic_a 6;		// reference javacard/framework/OpenjcvmRegistry.oneApplet
+					return;
+		}
+
+		.method public static processAPDUOneApplet()V 2 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 6;		// reference javacard/framework/OpenjcvmRegistry.oneApplet
+					aconst_null;
+					invokevirtual 7;		// javacard/framework/Applet.process(Ljavacard/framework/APDU;)V
+					return;
+		}
+
+	}
+
+	.class public OwnerPIN 11 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getValidatedFlag()Z;
+			setValidatedFlag(Z)V;
+			getTriesRemaining()B;
+			check([BSB)Z;
+			isValidated()Z;
+			reset()V;
+			update([BSB)V;
+			resetAndUnblock()V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface PIN { 
+				4;		// check([BSB)Z
+				3;		// getTriesRemaining()B
+				5;		// isValidated()Z
+				6;		// reset()V
+			}
+
+		}
+
+		.method public <init>(BB)V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method protected getValidatedFlag()Z 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method protected setValidatedFlag(Z)V 2 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public getTriesRemaining()B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public check([BSB)Z 4 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public isValidated()Z 5 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public reset()V 6 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public update([BSB)V 7 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public resetAndUnblock()V 8 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public final APDU 12 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private byte[] apduBuffer 0;		// [B
+			public static final byte PROTOCOL_T0 = 0;		// B
+			public static final byte PROTOCOL_T1 = 1;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getBuffer()[B;
+			getNAD()B;
+			setOutgoing()S;
+			setOutgoingNoChaining()S;
+			setOutgoingLength(S)V;
+			receiveBytes(S)S;
+			setIncomingAndReceive()S;
+			sendBytes(SS)V;
+			sendBytesLong([BSS)V;
+			setOutgoingAndSend(SS)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method  <init>([B)V {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 1;		// reference javacard/framework/APDU.apduBuffer
+					return;
+		}
+
+		.method public getBuffer()[B 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 1;		// reference javacard/framework/APDU.apduBuffer
+					areturn;
+		}
+
+		.method public static getInBlockSize()S 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static getOutBlockSize()S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static getProtocol()B 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public getNAD()B 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public setOutgoing()S 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public setOutgoingNoChaining()S 4 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public setOutgoingLength(S)V 5 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public receiveBytes(S)S 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public setIncomingAndReceive()S 7 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public sendBytes(SS)V 8 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public sendBytesLong([BSS)V 9 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public setOutgoingAndSend(SS)V 10 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public static waitExtension()V 3 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public PINException 13 extends CardRuntimeException {
+
+		.fields {
+			public static final short ILLEGAL_VALUE = 1;		// S
+		}
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 5;		// javacard/framework/CardRuntimeException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public APDUException 14 extends CardRuntimeException {
+
+		.fields {
+			public static final short ILLEGAL_USE = 1;		// S
+			public static final short BUFFER_BOUNDS = 2;		// S
+			public static final short BAD_LENGTH = 3;		// S
+			public static final short IO_ERROR = 4;		// S
+			public static final short NO_T0_GETRESPONSE = 170;		// S
+			public static final short T1_IFD_ABORT = 171;		// S
+		}
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 5;		// javacard/framework/CardRuntimeException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public SystemException 15 extends CardRuntimeException {
+
+		.fields {
+			public static final short ILLEGAL_AID = 4;		// S
+			public static final short ILLEGAL_TRANSIENT = 3;		// S
+			public static final short ILLEGAL_VALUE = 1;		// S
+			public static final short NO_RESOURCE = 5;		// S
+			public static final short NO_TRANSIENT_SPACE = 2;		// S
+		}
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 5;		// javacard/framework/CardRuntimeException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public TransactionException 16 extends CardRuntimeException {
+
+		.fields {
+			public static final short IN_PROGRESS = 1;		// S
+			public static final short NOT_IN_PROGRESS = 2;		// S
+			public static final short BUFFER_FULL = 3;		// S
+			public static final short INTERNAL_FAILURE = 4;		// S
+		}
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>(S)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 5;		// javacard/framework/CardRuntimeException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 1 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public UserException 17 extends CardException {
+
+		.publicMethodTable 3 {
+			equals(Ljava/lang/Object;)Z;
+			getReason()S;
+			setReason(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sconst_0;
+					invokespecial 9;		// javacard/framework/CardException.<init>(S)V
+					return;
+		}
+
+		.method public <init>(S)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					invokespecial 9;		// javacard/framework/CardException.<init>(S)V
+					return;
+		}
+
+		.method public static throwIt(S)V 2 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Util 18 extends 0.0 {		// extends java/lang/Object
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static final arrayCopy([BS[BSS)S 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static final arrayCopyNonAtomic([BS[BSS)S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static final arrayFillNonAtomic([BSSB)S 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static final arrayCompare([BS[BSS)B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static final makeShort(BB)S 4 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static final getShort([BS)S 5 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method public static final setShort([BSS)S 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_0;
+					sreturn;
+		}
+
+		.method  <init>()V {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 8;		// java/lang/Object.<init>()V
+					return;
+		}
+
+	}
+
+}
