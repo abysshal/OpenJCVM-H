@@ -59,7 +59,7 @@ public:
 	bool operator == (PackageInfo& p2)
 	{
 		if(this->majorVersion != p2.majorVersion) return false;
-		if(this->minorVersion != p2.minorVersion) return false;
+//		if(this->minorVersion != p2.minorVersion) return false;
 		if(this->AIDLength != p2.AIDLength) return false;
 		for(int i=0;i<this->AIDLength;i++)
 		{

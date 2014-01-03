@@ -1451,7 +1451,7 @@ void VirtualMachine::createClass(u2 sOffset,AbstractApplet* pCA)
 void VirtualMachine::invokestaticCommon(u2 index,AbstractApplet* pCA)
 {
 	CpInfo* pCI = pCA->pConstPool->pConstantPool[index];
-
+    
 	s1 value1 = pCI->info[0];
 
 	if(value1 == 0)
@@ -1465,6 +1465,9 @@ void VirtualMachine::invokestaticCommon(u2 index,AbstractApplet* pCA)
 	{
 		u1 packageIndex = value1 & 0x7F;
 		PackageInfo* pPI = pCA->pImport->packages[packageIndex];
+        
+        COUT << "External Package Info:" << ENDL;
+        pPI->displayInfo();
 
 		CardLibrary *pCL = CardLibList::findLibrary(pPI);
 
